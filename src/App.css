@@ -33,7 +33,6 @@
 
 .modal-wrapper{
   position: absolute;
-  top: calc(362px + (400 - 362) * ((100vw - 390px) / (1920 - 390)));
   width: calc(324px + (610 - 324) * ((100vw - 390px) / (1920 - 390)));
   height: calc(120px + (226 - 120) * ((100vw - 390px) / (1920 - 390)));
   background: linear-gradient(180deg, #212121 0%, rgba(0, 0, 0, 0.5) 100%);
@@ -332,7 +331,7 @@ nav{
     justify-content: space-around;
     align-items: center;
     left: calc(79px + (310 - 79) * ((100vw - 390px) / (860 - 390)));
-    top: calc(729px + (860 - 729) * ((100vw - 390px) / (860 - 390)));
+    top: calc(729px + (980 - 729) * ((100vw - 390px) / (860 - 390)));
     background: rgba(38, 37, 34, 0.47);
     box-shadow: 2px 2px 5px rgba(143, 143, 143, 0.25);
     border-radius: 16px;
@@ -346,7 +345,20 @@ nav{
     width: 100%;
   }
 
+  .footer a{
+    margin-left: 50px;
+  }
+
   .footer img{
-    padding-left: calc(85px + (290 - 85) * ((100vw - 390px) / (860 - 390)))
+    padding-left: calc(85px + (290 - 85) * ((100vw - 390px) / (860 - 390)));
+  }
+
+  .roadmap {
+    width: calc(352px + (822 - 352) * ((100vw - 390px) / (860 - 390)))
+  }
+
+
+  .roadmap img {
+    width: 100%;
   }
 }
