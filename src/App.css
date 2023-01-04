@@ -156,6 +156,14 @@ h1,
   width: 100%;
 }
 
+.column{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  color: #EDC452;
+}
+
 .logo span{
   font-family: 'Montserrat';
   font-style: normal;
@@ -322,6 +330,14 @@ nav{
     margin: auto;
     padding-right: 0;
     padding-top: 67px;
+  }
+
+  .column{
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    color: #EDC452;
   }
 
   .socials{

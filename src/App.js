@@ -63,12 +63,12 @@ function App() {
               <p>{timeLeft.hours}</p>
               <span>Hours</span>
             </div>
-            <span>:</span>
+            <span className='column'>:</span>
             <div className='box'>
               <p>{timeLeft.minutes}</p>
               <span>Minutes</span>
             </div>
-            <span>:</span>
+            <span className='column'>:</span>
             <div className='box'>
               <p>{timeLeft.seconds}</p>
               <span>Seconds</span>
