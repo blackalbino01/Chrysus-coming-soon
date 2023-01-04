@@ -7,11 +7,30 @@ import telegram from './assets/Telegram.png';
 import discord from './assets/Discord.png';
 import facebook from './assets/Facebook.png';
 import gitlab from './assets/Gitlab.png';
+import close from './assets/close.png';
 import './App.css';
 import CountdownTimer from "./helpers/countdownTimer";
 
+const Modal = (show) => {
+  const showHideClassName = show ? "modal display-block" : "modal display-none";
+  return (
+    <div className={showHideClassName}>
+      <div className="modal-wrapper">
+        <div className="modal-main">
+          <p>Join the Community</p>
+          <div className='input'>
+            <input placeholder='Email' type="text" />
+            <button>SUBSCRIBE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 function App() {
   const [timeLeft, setTimeLeft] = useState(CountdownTimer());
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
 		const timer = setTimeout(() => {
@@ -20,9 +39,15 @@ function App() {
 		return () => clearTimeout(timer);
 	}, [timeLeft]);
 
+  const showModal = () => {setShow(true)}
+
+	const hideModal = () => {setShow(false)}
+  
+
   return (
     <div className="App">
       <header className="App-header">
+      { show && <Modal show={showModal} handleClose={hideModal} /> }
         <nav>
           <div className='logo'>
             <img src={logo} className="App-logo" alt="logo" />
@@ -84,15 +109,16 @@ function App() {
           </li>
           <li>
             <a href="#">
-              <img src={telegram} alt="roadmap" />
+              <img src={gitlab} alt="roadmap" />
             </a>
           </li>
         </ul>
-      </header>
-      <div className='footer'>
-        <a href="#">Learn More</a>
-        <img src={crossBtn} alt="roadmap" />
+        <div className='footer'>
+          <a href="#">Learn More</a>
+          { show ? <button onClick={hideModal}><img src={close} alt="roadmap" /></button> : 
+          <button onClick={showModal}><img src={crossBtn} alt="roadmap" /></button>}
         </div>
+      </header>
     </div>
   );
 }
