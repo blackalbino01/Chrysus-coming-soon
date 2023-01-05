@@ -4,12 +4,26 @@
 }
 
 .App-header {
-  background-color:  #1E1E1E;
   min-height: 100vh;
   max-width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;z-index: 5;
+}
+
+.animated-div{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: -1;
+}
+
+.animated-div img{
+  position: inherit;
+  left: 0;
+  width: 15%;
+  animation: animateX 2s linear 0s infinite alternate, animateY 3.4s linear 0s infinite alternate;
 }
 
 .modal{
@@ -370,11 +384,19 @@ nav{
   }
 
   .roadmap {
-    width: calc(352px + (822 - 352) * ((100vw - 390px) / (860 - 390)))
+    width: calc(352px + (822 - 352) * ((100vw - 390px) / (860 - 390)));
   }
 
 
   .roadmap img {
     width: 100%;
   }
+}
+
+@keyframes animateX {
+  from {left: 10px;} to {left:85%;}
+}
+
+@keyframes animateY {
+  from {top: 10px;} to {top:90%;}
 }

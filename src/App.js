@@ -8,6 +8,7 @@ import discord from './assets/Discord.png';
 import facebook from './assets/Facebook.png';
 import gitlab from './assets/Gitlab.png';
 import close from './assets/close.png';
+import animation from './assets/background.png';
 import './App.css';
 import CountdownTimer from "./helpers/countdownTimer";
 
@@ -47,7 +48,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-      { show && <Modal show={showModal} handleClose={hideModal} /> }
+        <div className='animated-div'>
+          <img src={animation} alt="animation"/>
+        </div>
+        { show && <Modal show={showModal} handleClose={hideModal} /> }
         <nav>
           <div className='logo'>
             <img src={logo} className="App-logo" alt="logo" />
@@ -88,33 +92,33 @@ function App() {
         </div>
         <ul className='socials'>
           <li>
-            <a href="#">
-              <img src={telegram} alt="roadmap" />
+            <a href="https://t.me/chrysusofficial" target="_blank" rel="noreferrer">
+              <img src={telegram} alt="telegram" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img src={discord} alt="roadmap" />
+            <a href="https://discord.gg/e7kfZPRa" target="_blank" rel="noreferrer">
+              <img src={discord} alt="discord" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img src={twitter} alt="roadmap" />
+            <a href="https://twitter.com/chrysus_coin01" target="_blank" rel="noreferrer">
+              <img src={twitter} alt="twitter" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img src={facebook} alt="roadmap" />
+            <a href="https://www.facebook.com/chrysuscoin" target="_blank" rel="noreferrer">
+              <img src={facebook} alt="facebook" />
             </a>
           </li>
           <li>
-            <a href="#">
-              <img src={gitlab} alt="roadmap" />
+            <a href="https://www.linkedin.com/company/chrysus-gold-coin/" target="_blank" rel="noreferrer">
+              <img src={gitlab} alt="gitlab" />
             </a>
           </li>
         </ul>
         <div className='footer'>
-          <a href="#">Learn More</a>
+          <a href="https://medium.com/@chrysusofficial" target="_blank" rel="noreferrer">Learn More</a>
           { show ? <button onClick={hideModal}><img src={close} alt="roadmap" /></button> : 
           <button onClick={showModal}><img src={crossBtn} alt="roadmap" /></button>}
         </div>
