@@ -6,7 +6,7 @@ import twitter from './assets/Twitter.png';
 import telegram from './assets/Telegram.png';
 import discord from './assets/Discord.png';
 import facebook from './assets/Facebook.png';
-import gitlab from './assets/Gitlab.png';
+import gitlab from './assets/Linkedin.png';
 import close from './assets/close.png';
 import animation from './assets/background.png';
 import './App.css';
