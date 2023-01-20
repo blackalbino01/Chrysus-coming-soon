@@ -11,17 +11,32 @@ import close from './assets/close.png';
 import animation from './assets/background.png';
 import './App.css';
 import CountdownTimer from "./helpers/countdownTimer";
+import { collection, addDoc } from "firebase/firestore";
+import {db} from './helpers/firebase';
 
 const Modal = (show) => {
+  const [email, setEmail] = useState("");
   const showHideClassName = show ? "modal display-block" : "modal display-none";
+  const storeEmail = async() => {
+    try {
+      const docRef = await addDoc(collection(db, "emails"), {
+        email: email,    
+      });
+      console.log("Document written with ID: ", docRef.id);
+      window.location.reload(false);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  }
   return (
     <div className={showHideClassName}>
       <div className="modal-wrapper">
         <div className="modal-main">
           <p>Join the Community</p>
           <div className='input'>
-            <input placeholder='Email' type="text" />
-            <button>SUBSCRIBE</button>
+            <input placeholder='Email' type="text" 
+            onChange={(e)=>setEmail(e.target.value)}/>
+            <button onClick={storeEmail}>SUBSCRIBE</button>
           </div>
         </div>
       </div>
