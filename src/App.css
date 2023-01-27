@@ -276,7 +276,7 @@ nav{
 .roadmap img{
   padding-top: 34px;
   padding-bottom: 45px;
-  width:calc(353px + (1042 - 353) * ((100vw - 390px) / (1920 - 390)));
+  width: 100%;
 }
 
 .footer{
