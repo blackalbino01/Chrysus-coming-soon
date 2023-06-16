@@ -1,5 +1,5 @@
 export default function CountdownTimer() {
-	const countDownDate = new Date("May 10, 2023").getTime();
+	const countDownDate = new Date("September 10, 2023").getTime();
 	const now = new Date().getTime();
 	const difference = countDownDate - now;
 	let timeLeft = {};
